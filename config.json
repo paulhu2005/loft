@@ -1,6 +1,21 @@
 {
-    "title":"Blog Title",
-    "subTitle":"Blog description",
+    "title":"Family journal",
+    "subTitle":"MOHAN家庭日志",
     "avatarUrl":"https://github.githubassets.com/favicons/favicon.svg",
+    "homeUrl":"https://family.mohan.hu",
+    "onePageListNum":10,
+"i18n":"CN",
+"UTC":8,
+"themeMode":"manual",
+"dayTheme":"light",
+"nightTheme":"dark_colorblind",
+"urlMode":"pinyin",
+"style":"",
+"script":"",
+"indexStyle":"",
+"indexScript":"",
+"showPostSource":1,
+"rssSplit":"sentence",
+"bottomText":"Copyright 2024 MOHAN",
     "GMEEK_VERSION":"last"
 }
