@@ -4,7 +4,7 @@
     <meta content="text/html; charset=utf-8" http-equiv="content-type" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link href="//cdn.staticfile.net/Primer/21.0.7/primer.css" rel="stylesheet" />
+    <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
     <link rel="icon" href="https://github.githubassets.com/favicons/favicon.svg"><script>
         let theme = localStorage.getItem("meek_theme") || "light";
         document.documentElement.setAttribute("data-color-mode", theme);
@@ -158,8 +158,10 @@ Evernote 提供的 .enex 导出格式还是相当方便的，至少受到不少�
 此次 Evernote 的变化让许多人不安，看到了笔记消失的风险。本文更多是一种笔记备份策略，尽可能将内容完整的保留下来。然后再去讨论它放在哪个工具里再续新生。"<br>
 <a href="https://utgd.net/article/20229#:~:text=Beta,%E7%BB%AD%E6%96%B0%E7%94%9F%E3%80%82" rel="nofollow">https://utgd.net/article/20229#:~:text=Beta,%E7%BB%AD%E6%96%B0%E7%94%9F%E3%80%82</a></p></div>
 <div style="font-size:small;margin-top:8px;float:right;"></div>
+
 <button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
 <div class="comments" id="comments"></div>
+
 </div>
     <div id="footer">Copyright © <span id="year"></span><a href="https://paulhu2005.github.io/loft"> Loft Journal </a>
 <p>
@@ -214,6 +216,8 @@ console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n\n","padding:5p
 <script>
 document.getElementById("pathHome").setAttribute("d",IconList["home"]);
 document.getElementById("pathIssue").setAttribute("d",IconList["github"]);
+
+
 
 function openComments(){
     cm=document.getElementById("comments");

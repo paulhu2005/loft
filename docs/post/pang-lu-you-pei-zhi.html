@@ -4,7 +4,7 @@
     <meta content="text/html; charset=utf-8" http-equiv="content-type" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link href="//cdn.staticfile.net/Primer/21.0.7/primer.css" rel="stylesheet" />
+    <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
     <link rel="icon" href="https://github.githubassets.com/favicons/favicon.svg"><script>
         let theme = localStorage.getItem("meek_theme") || "light";
         document.documentElement.setAttribute("data-color-mode", theme);
@@ -104,8 +104,10 @@ DNS这里也填主路由<br>
 这个时候将你的设备连接到主路由，发现旁路由没有作用怎么办？想要的服务都没得到，这是因为没有在终端设备设置网关，我们必须在终端设备设置网关，才能要求路由器在分发给自己之前，先去旁路由去一遍。<br>
 设置方法很简单，不管你是WIFI连接还是网线连接，都设置成手动获取IP，IP地址填入主路由网段相同的任意IP地址，注意这里要规避你的旁路由IP地址，并且不要和其他设备冲突，比如，这里填入192.168.31.102，子网掩码就填入255.255.255.0，网关（Mac叫路由器）和首选DNS这里就填旁路由IP地址，这样才能保证数据会先去旁路由处理。</p></div>
 <div style="font-size:small;margin-top:8px;float:right;"></div>
+
 <button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
 <div class="comments" id="comments"></div>
+
 </div>
     <div id="footer">Copyright © <span id="year"></span><a href="https://paulhu2005.github.io/loft"> Loft Journal </a>
 <p>
@@ -160,6 +162,8 @@ console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n\n","padding:5p
 <script>
 document.getElementById("pathHome").setAttribute("d",IconList["home"]);
 document.getElementById("pathIssue").setAttribute("d",IconList["github"]);
+
+
 
 function openComments(){
     cm=document.getElementById("comments");
