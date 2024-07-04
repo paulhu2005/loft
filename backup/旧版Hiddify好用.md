@@ -1,0 +1,1 @@
+新出的singbox核心hiddify next似乎对Vless支持有问题。还是老版xray或V2ray内核的好用，此记。
