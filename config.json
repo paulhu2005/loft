@@ -9,7 +9,8 @@
 "themeMode":"manual",
 "dayTheme":"light",
 "nightTheme":"dark_colorblind",
-"urlMode":"pinyin",
+"urlMode":"issue",
+"needComment":"0",
 "showPostSource":1,
 "rssSplit":"sentence",
     "GMEEK_VERSION":"last"
