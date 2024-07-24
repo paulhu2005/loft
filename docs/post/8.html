@@ -38,7 +38,7 @@ Evernote “解散”危机之后，你应该如何高质量转移笔记？
 2
 7 月 8 日，Evernote 在官方 Blog 发布了一篇新闻，宣布将运营中心迁移至欧洲，其中提到 Evernote 解散了大部分在美国和智利的员工。">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://paulhu2005.github.io/loft/post/Evernote%20%E2%80%9C-jie-san-%E2%80%9D-wei-ji-zhi-hou-%EF%BC%8C-ni-ying-gai-ru-he-gao-zhi-liang-zhuan-yi-bi-ji-%EF%BC%9F.html">
+<meta property="og:url" content="https://log.mohan.hu/post/8.html">
 <meta property="og:image" content="https://github.githubassets.com/favicons/favicon.svg">
 <title>Evernote “解散”危机之后，你应该如何高质量转移笔记？</title>
 
@@ -74,7 +74,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
     <div id="header">
 <h1 class="postTitle">Evernote “解散”危机之后，你应该如何高质量转移笔记？</h1>
 <div class="title-right">
-    <a href="https://paulhu2005.github.io/loft" id="buttonHome" class="btn btn-invisible circle" title="首页">
+    <a href="https://log.mohan.hu" id="buttonHome" class="btn btn-invisible circle" title="首页">
         <svg class="octicon" width="16" height="16">
             <path id="pathHome" fill-rule="evenodd"></path>
         </svg>
@@ -161,11 +161,8 @@ Evernote 提供的 .enex 导出格式还是相当方便的，至少受到不少�
 <a href="https://utgd.net/article/20229#:~:text=Beta,%E7%BB%AD%E6%96%B0%E7%94%9F%E3%80%82" rel="nofollow">https://utgd.net/article/20229#:~:text=Beta,%E7%BB%AD%E6%96%B0%E7%94%9F%E3%80%82</a></p></div>
 <div style="font-size:small;margin-top:8px;float:right;"></div>
 
-<button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
-<div class="comments" id="comments"></div>
-
 </div>
-    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://paulhu2005.github.io/loft">Loft Journal</a></div>
+    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://log.mohan.hu">Loft Journal</a></div>
 <div id="footer2">
     <span id="runday"></span><span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a></span>
 </div>
@@ -220,41 +217,6 @@ document.getElementById("pathIssue").setAttribute("d",IconList["github"]);
 
 
 
-function openComments(){
-    cm=document.getElementById("comments");
-    cmButton=document.getElementById("cmButton");
-    cmButton.innerHTML="loading";
-    span=document.createElement("span");
-    span.setAttribute("class","AnimatedEllipsis");
-    cmButton.appendChild(span);
-
-    script=document.createElement("script");
-    script.setAttribute("src","https://utteranc.es/client.js");
-    script.setAttribute("repo","paulhu2005/loft");
-    script.setAttribute("issue-term","title");
-    
-    if(localStorage.getItem("meek_theme")=="dark"){script.setAttribute("theme","dark-blue");}
-    else if(localStorage.getItem("meek_theme")=="light") {script.setAttribute("theme","github-light");}
-    else{script.setAttribute("theme","preferred-color-scheme");}
-    
-    script.setAttribute("crossorigin","anonymous");
-    script.setAttribute("async","");
-    cm.appendChild(script);
-
-    int=self.setInterval("iFrameLoading()",200);
-}
-
-function iFrameLoading(){
-    var utterances=document.getElementsByClassName('utterances');
-    if(utterances.length==1){
-        if(utterances[0].style.height!=""){
-            utterancesLoad=1;
-            int=window.clearInterval(int);
-            document.getElementById("cmButton").style.display="none";
-            console.log("utterances Load OK");
-        }
-    }
-}
 </script>
 
 

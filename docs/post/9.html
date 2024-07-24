@@ -10,13 +10,17 @@
         let theme = localStorage.getItem("meek_theme") || "light";
         document.documentElement.setAttribute("data-color-mode", theme);
     </script>
-<meta name="description" content="天气凉爽，抓紧时间，每日锻炼。">
-<meta property="og:title" content="运动季节加把劲哦">
-<meta property="og:description" content="天气凉爽，抓紧时间，每日锻炼。">
+<meta name="description" content="旁路由配置
+（1）设置与主路由于同一网段内
+① 保持你的终端设备与主路由的连接，在终端的网络设置中，将IPv4配置改为手动，设置成与旁路由同一网段的任意IP地址。">
+<meta property="og:title" content="旁路由配置">
+<meta property="og:description" content="旁路由配置
+（1）设置与主路由于同一网段内
+① 保持你的终端设备与主路由的连接，在终端的网络设置中，将IPv4配置改为手动，设置成与旁路由同一网段的任意IP地址。">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://paulhu2005.github.io/loft/post/yun-dong-ji-jie-jia-ba-jing-o.html">
+<meta property="og:url" content="https://log.mohan.hu/post/9.html">
 <meta property="og:image" content="https://github.githubassets.com/favicons/favicon.svg">
-<title>运动季节加把劲哦</title>
+<title>旁路由配置</title>
 
 
 
@@ -48,15 +52,15 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 
 <body>
     <div id="header">
-<h1 class="postTitle">运动季节加把劲哦</h1>
+<h1 class="postTitle">旁路由配置</h1>
 <div class="title-right">
-    <a href="https://paulhu2005.github.io/loft" id="buttonHome" class="btn btn-invisible circle" title="首页">
+    <a href="https://log.mohan.hu" id="buttonHome" class="btn btn-invisible circle" title="首页">
         <svg class="octicon" width="16" height="16">
             <path id="pathHome" fill-rule="evenodd"></path>
         </svg>
     </a>
     
-    <a href="https://github.com/paulhu2005/loft/issues/12" target="_blank" class="btn btn-invisible circle" title="Issue">
+    <a href="https://github.com/paulhu2005/loft/issues/9" target="_blank" class="btn btn-invisible circle" title="Issue">
         <svg class="octicon" width="16" height="16">
             <path id="pathIssue" fill-rule="evenodd"></path>
         </svg>
@@ -72,15 +76,39 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </div>
 </div>
     <div id="content">
-<div class="markdown-body" id="postBody"><p>天气凉爽，抓紧时间，每日锻炼。<br>
-最喜欢快步走+器械+乒乓球组合，全身运动，改善睡眠和减脂增肌成效显著。</p></div>
+<div class="markdown-body" id="postBody"><p>旁路由配置<br>
+（1）设置与主路由于同一网段内<br>
+① 保持你的终端设备与主路由的连接，在终端的网络设置中，将IPv4配置改为手动，设置成与旁路由同一网段的任意IP地址。比如说我的旁路由LAN口IP地址为192.168.2.1，就代表网段标识是192.168.2.x，因此这里的IP地址设置为192.168.2.2~192.168.2.254（排除广播地址255）之间的任意一个均可以。在本文中，我使用192.168.2.101这个地址。<br>
+② 根据操作系统不同，Windows要求填写子网前缀长度，就填写24，而macOS子网掩码要填写255.255.255.0. （当然，如果你的子网掩码是16位前缀长度，那就保持255.255.0.0即可）<br>
+③打开winwos网络设置，点击网络属性，编辑IPv4，根据你旁路由IP地址，依次填写，并保存。<br>
+④这个时候，你从浏览器中就可以进入旁路由的后台界面了。<br>
+⑤进入管理界面后，我们依次找到网络-接口-LAN</p>
+<p>点击修改，在基本设置中，将传输协议改为静态地址：<br>
+IPv4地址修改到与主路由同一网段的任意地址，比方说，主路由的LAN口地址为192.168.31.1，子网掩码是255.255.255.0，那么其网段标识即为192.168.31.X，则从192.168.31.2到192.168.31.254中任选一个即可，这样是为了避免后台管理地址冲突，在本文中，使用192.168.31.2作为旁路由的IPv4地址<br>
+子网掩码也填写255.255.255.0，与主路由保持一致即可；<br>
+IPv4网关要填写主路由LAN口的IP地址，这里是192.168.31.1；<br>
+DNS这里也填主路由<br>
+下面IPv6分配长度，尽可能禁用，这些交给主路由去操作就行；</p>
+<p>同时，关掉DHCP服务，勾选忽略接口；</p>
+<p>在高级设置中，也尽可能关闭IPv6管理；</p>
+<p>⑦点击保存应用，这个时候不要等待页面回应了，因为更改了旁路由IP地址后，你用目前的电脑已经访问不了了。</p>
+<p>⑧重新进入电脑的网络设置，根据操作系统的不同，在IPv4设置里，重新修改为DHCP或者自动获取IP地址</p>
+<p>（2）防火墙配置<br>
+①电脑自动获取到IP地址后，在浏览器输入之前修改后的旁路由IP地址，本文中是192.168.31.2，进入旁路由管理界面<br>
+②依次找到网络-防火墙，在区域转发中，关闭SYN-flood防御，开启IP动态伪装，然后保存应用。</p>
+<p>③防火墙自定义规则加入一条指令，以确保同时访问百度和谷歌<br>
+指令：iptables -t nat -I POSTROUTING -o eth0 -j MASQUERADE<br>
+输入完成后，重启防火墙。</p>
+<p>④打开网络-接口-LAN-物理设置，关闭桥接接口，保存应用</p>
+<p>⑤打开你的主路由后台，将DHCP服务中的DNS1和默认网关更改为旁路由IP地址</p>
+<p>⑥到这里，旁路由配置已完成，可以在网络-诊断中看看能不能ping通外网，如果不行，请检查以上是否都设置正确</p>
+<p>客户端配置<br>
+这个时候将你的设备连接到主路由，发现旁路由没有作用怎么办？想要的服务都没得到，这是因为没有在终端设备设置网关，我们必须在终端设备设置网关，才能要求路由器在分发给自己之前，先去旁路由去一遍。<br>
+设置方法很简单，不管你是WIFI连接还是网线连接，都设置成手动获取IP，IP地址填入主路由网段相同的任意IP地址，注意这里要规避你的旁路由IP地址，并且不要和其他设备冲突，比如，这里填入192.168.31.102，子网掩码就填入255.255.255.0，网关（Mac叫路由器）和首选DNS这里就填旁路由IP地址，这样才能保证数据会先去旁路由处理。</p></div>
 <div style="font-size:small;margin-top:8px;float:right;"></div>
 
-<button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
-<div class="comments" id="comments"></div>
-
 </div>
-    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://paulhu2005.github.io/loft">Loft Journal</a></div>
+    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://log.mohan.hu">Loft Journal</a></div>
 <div id="footer2">
     <span id="runday"></span><span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a></span>
 </div>
@@ -135,41 +163,6 @@ document.getElementById("pathIssue").setAttribute("d",IconList["github"]);
 
 
 
-function openComments(){
-    cm=document.getElementById("comments");
-    cmButton=document.getElementById("cmButton");
-    cmButton.innerHTML="loading";
-    span=document.createElement("span");
-    span.setAttribute("class","AnimatedEllipsis");
-    cmButton.appendChild(span);
-
-    script=document.createElement("script");
-    script.setAttribute("src","https://utteranc.es/client.js");
-    script.setAttribute("repo","paulhu2005/loft");
-    script.setAttribute("issue-term","title");
-    
-    if(localStorage.getItem("meek_theme")=="dark"){script.setAttribute("theme","dark-blue");}
-    else if(localStorage.getItem("meek_theme")=="light") {script.setAttribute("theme","github-light");}
-    else{script.setAttribute("theme","preferred-color-scheme");}
-    
-    script.setAttribute("crossorigin","anonymous");
-    script.setAttribute("async","");
-    cm.appendChild(script);
-
-    int=self.setInterval("iFrameLoading()",200);
-}
-
-function iFrameLoading(){
-    var utterances=document.getElementsByClassName('utterances');
-    if(utterances.length==1){
-        if(utterances[0].style.height!=""){
-            utterancesLoad=1;
-            int=window.clearInterval(int);
-            document.getElementById("cmButton").style.display="none";
-            console.log("utterances Load OK");
-        }
-    }
-}
 </script>
 
 

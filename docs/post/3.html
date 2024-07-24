@@ -10,13 +10,13 @@
         let theme = localStorage.getItem("meek_theme") || "light";
         document.documentElement.setAttribute("data-color-mode", theme);
     </script>
-<meta name="description" content="这是我用的很好的一个自动化工具。">
-<meta property="og:title" content="Ifttt的使用价值">
-<meta property="og:description" content="这是我用的很好的一个自动化工具。">
+<meta name="description" content="从冬季到初春的供暖季节，北方地区的室内空气都会特别干燥，尤其是今年的北方地区热得特别早，温度上升，降雨却特别少，天地之间一片干热。">
+<meta property="og:title" content="干渴">
+<meta property="og:description" content="从冬季到初春的供暖季节，北方地区的室内空气都会特别干燥，尤其是今年的北方地区热得特别早，温度上升，降雨却特别少，天地之间一片干热。">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://paulhu2005.github.io/loft/post/Ifttt-de-shi-yong-jia-zhi.html">
+<meta property="og:url" content="https://log.mohan.hu/post/3.html">
 <meta property="og:image" content="https://github.githubassets.com/favicons/favicon.svg">
-<title>Ifttt的使用价值</title>
+<title>干渴</title>
 
 
 
@@ -48,15 +48,15 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 
 <body>
     <div id="header">
-<h1 class="postTitle">Ifttt的使用价值</h1>
+<h1 class="postTitle">干渴</h1>
 <div class="title-right">
-    <a href="https://paulhu2005.github.io/loft" id="buttonHome" class="btn btn-invisible circle" title="首页">
+    <a href="https://log.mohan.hu" id="buttonHome" class="btn btn-invisible circle" title="首页">
         <svg class="octicon" width="16" height="16">
             <path id="pathHome" fill-rule="evenodd"></path>
         </svg>
     </a>
     
-    <a href="https://github.com/paulhu2005/loft/issues/18" target="_blank" class="btn btn-invisible circle" title="Issue">
+    <a href="https://github.com/paulhu2005/loft/issues/3" target="_blank" class="btn btn-invisible circle" title="Issue">
         <svg class="octicon" width="16" height="16">
             <path id="pathIssue" fill-rule="evenodd"></path>
         </svg>
@@ -72,15 +72,12 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </div>
 </div>
     <div id="content">
-<div class="markdown-body" id="postBody"><p>这是我用的很好的一个自动化工具。<br>
-自从我认识它已经10年了，总是有新的用途出现。科技发展真是越来越棒了。</p></div>
+<div class="markdown-body" id="postBody"><p>从冬季到初春的供暖季节，北方地区的室内空气都会特别干燥，尤其是今年的北方地区热得特别早，温度上升，降雨却特别少，天地之间一片干热。<br>
+很多人都感觉到口干舌燥，皮肤干燥，眼睛干燥，便便干燥……身体和大地一样在呼喊：缺水啊……</p></div>
 <div style="font-size:small;margin-top:8px;float:right;"></div>
 
-<button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
-<div class="comments" id="comments"></div>
-
 </div>
-    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://paulhu2005.github.io/loft">Loft Journal</a></div>
+    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://log.mohan.hu">Loft Journal</a></div>
 <div id="footer2">
     <span id="runday"></span><span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a></span>
 </div>
@@ -135,41 +132,6 @@ document.getElementById("pathIssue").setAttribute("d",IconList["github"]);
 
 
 
-function openComments(){
-    cm=document.getElementById("comments");
-    cmButton=document.getElementById("cmButton");
-    cmButton.innerHTML="loading";
-    span=document.createElement("span");
-    span.setAttribute("class","AnimatedEllipsis");
-    cmButton.appendChild(span);
-
-    script=document.createElement("script");
-    script.setAttribute("src","https://utteranc.es/client.js");
-    script.setAttribute("repo","paulhu2005/loft");
-    script.setAttribute("issue-term","title");
-    
-    if(localStorage.getItem("meek_theme")=="dark"){script.setAttribute("theme","dark-blue");}
-    else if(localStorage.getItem("meek_theme")=="light") {script.setAttribute("theme","github-light");}
-    else{script.setAttribute("theme","preferred-color-scheme");}
-    
-    script.setAttribute("crossorigin","anonymous");
-    script.setAttribute("async","");
-    cm.appendChild(script);
-
-    int=self.setInterval("iFrameLoading()",200);
-}
-
-function iFrameLoading(){
-    var utterances=document.getElementsByClassName('utterances');
-    if(utterances.length==1){
-        if(utterances[0].style.height!=""){
-            utterancesLoad=1;
-            int=window.clearInterval(int);
-            document.getElementById("cmButton").style.display="none";
-            console.log("utterances Load OK");
-        }
-    }
-}
 </script>
 
 

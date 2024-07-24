@@ -14,7 +14,7 @@
 <meta property="og:title" content="世界你好">
 <meta property="og:description" content="博客是一块还算清净的地方，能够相对自由地去表达。">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://paulhu2005.github.io/loft/post/shi-jie-ni-hao.html">
+<meta property="og:url" content="https://log.mohan.hu/post/1.html">
 <meta property="og:image" content="https://github.githubassets.com/favicons/favicon.svg">
 <title>世界你好</title>
 
@@ -50,7 +50,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
     <div id="header">
 <h1 class="postTitle">世界你好</h1>
 <div class="title-right">
-    <a href="https://paulhu2005.github.io/loft" id="buttonHome" class="btn btn-invisible circle" title="首页">
+    <a href="https://log.mohan.hu" id="buttonHome" class="btn btn-invisible circle" title="首页">
         <svg class="octicon" width="16" height="16">
             <path id="pathHome" fill-rule="evenodd"></path>
         </svg>
@@ -76,11 +76,8 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <p>在我看来，超链接就是互联网的基本自由，平等地获取信息是我们每个人应拥有的权利。读博客时链接的不断跳转，于我而言，与以书找书的快感很相似，也是不断地在打破自己原有的认知，是涉猎新领域、新知识的好渠道。</p></div>
 <div style="font-size:small;margin-top:8px;float:right;"></div>
 
-<button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
-<div class="comments" id="comments"></div>
-
 </div>
-    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://paulhu2005.github.io/loft">Loft Journal</a></div>
+    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://log.mohan.hu">Loft Journal</a></div>
 <div id="footer2">
     <span id="runday"></span><span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a></span>
 </div>
@@ -135,41 +132,6 @@ document.getElementById("pathIssue").setAttribute("d",IconList["github"]);
 
 
 
-function openComments(){
-    cm=document.getElementById("comments");
-    cmButton=document.getElementById("cmButton");
-    cmButton.innerHTML="loading";
-    span=document.createElement("span");
-    span.setAttribute("class","AnimatedEllipsis");
-    cmButton.appendChild(span);
-
-    script=document.createElement("script");
-    script.setAttribute("src","https://utteranc.es/client.js");
-    script.setAttribute("repo","paulhu2005/loft");
-    script.setAttribute("issue-term","title");
-    
-    if(localStorage.getItem("meek_theme")=="dark"){script.setAttribute("theme","dark-blue");}
-    else if(localStorage.getItem("meek_theme")=="light") {script.setAttribute("theme","github-light");}
-    else{script.setAttribute("theme","preferred-color-scheme");}
-    
-    script.setAttribute("crossorigin","anonymous");
-    script.setAttribute("async","");
-    cm.appendChild(script);
-
-    int=self.setInterval("iFrameLoading()",200);
-}
-
-function iFrameLoading(){
-    var utterances=document.getElementsByClassName('utterances');
-    if(utterances.length==1){
-        if(utterances[0].style.height!=""){
-            utterancesLoad=1;
-            int=window.clearInterval(int);
-            document.getElementById("cmButton").style.display="none";
-            console.log("utterances Load OK");
-        }
-    }
-}
 </script>
 
 
