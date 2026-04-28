@@ -1,0 +1,1 @@
+走了不少弯路，学习实践了如何用lucky实现nas绑定cloudflare ddns域名，并采用非反向代理的方法搞定vaultwarden管理器docker部署，顺带搞定路由器端口映射，实测效果完美，祝贺一下！
